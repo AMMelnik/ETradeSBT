@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">true</property> <!-- показывать sql запросы -->
+        <property name="format_sql">true</property> <!--форматировать sql запросы-->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>  <!--выбранный диалект для БД-->
+        <property name="connection.driver_class">org.postgresql.Driver</property>  <!--jdbc драйвер-->
+        <property name="connection.url">jdbc:postgresql://127.0.0.1:5432/eTradeJSP-DB
+        </property>  <!--параметры подключения к БД-->
+        <property name="connection.username">postgres</property> <!--// логин к БД-->
+        <property name="connection.password">12345</property> <!--// пароль к БД-->
+
+        <property name="hibernate.hbm2ddl.auto">update
+        </property> <!--// параметр, отвечающий за создание БД при каждом запуске приложения-->
+
+        <!--Классы которые являются модельными-->
+        <mapping class="com.edmodo.model.User"/>
+        <mapping class="com.edmodo.model.Item"/>
+        <mapping class="com.edmodo.model.Bid"/>
+    </session-factory>
+
+</hibernate-configuration>
